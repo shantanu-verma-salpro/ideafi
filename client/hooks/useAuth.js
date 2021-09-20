@@ -20,6 +20,15 @@ export default function useAuth() {
       .createUserWithEmailAndPassword(email, password)
       .then((response) => {
         setUser(response.user);
+        firebase.firestore().collection("users").doc(response.user.uid).set({
+            email:response.user.email,
+            displayName: response.user.displayName?response.user.displayName:"Ideafi Rookie",
+            photoURL: response.user.photoURL ?response.user.photoURL : "/pic.jpg",
+            verified: false,
+            github: "",
+            about: "Nothing to see here",
+            fullname: response.user.displayName?response.user.displayName:"Ideafi Rookie"
+        })
         return response.user;
       });
   };

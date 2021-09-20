@@ -4,6 +4,8 @@ import "swiper/css/navigation";
 import getCat from '../store/cat'
 import { Container, VStack, Text, HStack, Box } from "@chakra-ui/react";
 import Link from 'next/link';
+import { faTag } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function renderCategory() {
  
   const ds = {
@@ -38,7 +40,7 @@ export default function renderCategoryCols() {
       <VStack alignItems="normal" mt="7">
         <HStack justifyContent="space-between" mb="5">
           <Text fontSize="20px" mt="0" mb="0">
-            Categories
+          <FontAwesomeIcon icon={faTag} style={{color:"#607d8b",marginRight:"8px"}}/>Categories
           </Text>
         </HStack>
         <Swiper

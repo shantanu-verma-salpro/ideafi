@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Router from "next/router"
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { useState, useEffect } from "react";
@@ -71,7 +72,7 @@ function Idea() {
         .doc(name)
         .update({
           contributions: firebase.firestore.FieldValue.arrayUnion(AuthUser.id),
-        }).then(()=>router.replace(router.asPath))
+        }).then(()=>setCon(true))
         .catch((e) => console.log(e));
     }
   };
@@ -129,8 +130,7 @@ function Idea() {
                 </Box>
                 <Box w="100%" bg="#131313" p="5" borderRadius="10" minH="100px">
                   <VStack alignItems="normal">
-                    {AuthUser.email ? (
-                      data.contributions.includes(AuthUser.id) ? null : (
+                    {!isContributer ? 
                         <Button
                           colorScheme="purple"
                           size="sm"
@@ -140,8 +140,7 @@ function Idea() {
                           {" "}
                           Contribute
                         </Button>
-                      )
-                    ) : null}
+                     : null}
 
                     <Text>Created By</Text>
 
@@ -174,8 +173,7 @@ function Idea() {
                 </Box>
                 <Box w="20%" bg="#131313" p="5" borderRadius="10" minH="300px">
                   <VStack alignItems="normal">
-                    {AuthUser.email ? (
-                      data.contributions.includes(AuthUser.id) ? null : (
+                  {!isContributer ? 
                         <Button
                           colorScheme="purple"
                           size="sm"
@@ -185,8 +183,7 @@ function Idea() {
                           {" "}
                           Contribute
                         </Button>
-                      )
-                    ) : null}
+                     : null}
                     <Text>Created By</Text>
 
                     <Box>

@@ -51,7 +51,7 @@ export default function Auth() {
               </>
             )}
           />
-          <Button mt={4} colorScheme="twitter" type="submit">
+          <Button mt={4} colorScheme="purple" type="submit">
             Signin
           </Button>
         </form>

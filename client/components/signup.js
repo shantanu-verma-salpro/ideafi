@@ -18,7 +18,6 @@ export default function Auth() {
             duration: 2000,
             isClosable: true,
           })
-          Router.push("/");
     }catch(e){
         toast({
             title: "Some error occurred",
@@ -58,7 +57,7 @@ export default function Auth() {
               </>
             )}
           />
-          <Button mt={4} colorScheme="twitter" type="submit">
+          <Button mt={4} colorScheme="purple" type="submit">
             Signup
           </Button>
         </form>

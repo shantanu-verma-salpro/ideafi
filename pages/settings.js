@@ -23,16 +23,19 @@ function Setting() {
       const user = firebase.firestore().collection("users").doc(AuthUser.id);
       user.get().then((val) => {
         if (val.exists) setMeta(val.data());
-        else if (AuthUser.email)
-          setMeta({
-            email: AuthUser.email,
-            displayName: AuthUser.displayName,
-            photoURL: AuthUser.photoURL ? AuthUser.photoURL : "/pic.jpg",
-            verified: false,
-            github: "",
-            about: "Nothing to see here",
-            fullname: AuthUser.displayName,
-          });
+        else if (AuthUser.email){
+        const yu = {
+          email: AuthUser.email,
+          displayName: AuthUser.displayName,
+          photoURL: AuthUser.photoURL ? AuthUser.photoURL : "/pic.jpg",
+          verified: false,
+          github: "",
+          about: "Nothing to see here",
+          fullname: AuthUser.displayName,
+        };
+          setMeta(yu);
+      }
+
       });
     }
   }, [AuthUser]);

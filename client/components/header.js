@@ -13,7 +13,7 @@ import {
   MenuOptionGroup,
   MenuIcon,
   MenuCommand,
-  MenuDivider,IconButton
+  MenuDivider,IconButton,Button
 } from "@chakra-ui/react";
 import { AddIcon, ArrowRightIcon, SettingsIcon } from "@chakra-ui/icons";
 import Link from "next/link";
@@ -91,11 +91,9 @@ function Header() {
         ) : (
           <Link href="/auth">
             <a>
-              <FontAwesomeIcon
-                icon={faSignInAlt}
-                widths="27px"
-                xHeight="27px"
-              />
+            <Button size="sm" colorScheme="purple" type="submit">
+            Login
+          </Button>
             </a>
           </Link>
         )}

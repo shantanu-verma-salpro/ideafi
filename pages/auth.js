@@ -2,7 +2,7 @@ import { withAuthUser, AuthAction } from 'next-firebase-auth'
 import Signin from '../client/components/signin';
 import Signup from '../client/components/signup';
 import {useState} from "react"
-import { Container,Button,Spinner,Center } from "@chakra-ui/react";
+import { Container,Button,Spinner,Center,Text } from "@chakra-ui/react";
 const Loader = () =>  <Center mt="20"><Spinner size="xl" /></Center>
 function Auth(){
     const [num,setNum] = useState(0); // 0 in , 1 up
@@ -10,7 +10,7 @@ function Auth(){
         return num?<Signup/>:<Signin/>;
     }
     const renderLink = ()=>{
-       return <Button colorScheme="twitter" variant="outline" onClick={()=>setNum(!num)}>{!num?"Signup":"Signin"}</Button>
+       return <a href="#"><Text colorScheme="purple" onClick={()=>setNum(!num)}>{!num?"New to ideafi?":"Already have an account?"}</Text></a>
     }
     return (
         <>

@@ -26,7 +26,8 @@ import { StarIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import dynamic from 'next/dynamic'
 const Contributers = dynamic(() => import('./contributers'))
 import Link from "next/link"
-
+import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function GetBox({ title, contributions, ratings, verified, id,...rest }) {
 
   return (
@@ -92,7 +93,7 @@ export default function RenderTrending() {
       <VStack alignItems="normal" mt="7">
         <HStack justifyContent="space-between" mb="5">
           <Text fontSize="20px" mt="0" mb="0">
-            Trending now
+            <FontAwesomeIcon icon={faFire} style={{color:"#e1e12d",marginRight:"8px"}}/>Trending now
           </Text>
         </HStack>
         <Swiper
