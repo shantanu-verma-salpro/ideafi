@@ -1,0 +1,24 @@
+.rdt_TableCol{
+  font-size: 16px !important;
+}
+body,html{
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden !important;
+}
+.rdt_TableCol_Sortable:hover{
+  color:rgb(224, 224, 224) !important;
+}
+.rdt_TableRow{
+  font-size: 14px !important;
+}
+
+.rdt_TableCol_Sortable span{
+  font-size: 12px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+*:focus{
+  box-shadow: none !important;
+}
