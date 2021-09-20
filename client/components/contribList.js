@@ -32,7 +32,7 @@ export default function C({ contributions }) {
   return (
     <><VStack spacing="2" alignItems="normal">
       {data ? (
-        data.map((j, idx) => <Link href={`/user/${j.id}`} key={idx}><a><HStack><Avatar src={j.photoURL} size="xs"/><Text >{j.fullname}</Text></HStack></a></Link>)
+        data.map((j, idx) => <Link href={`/user/${j.id}`} key={idx}><a><HStack><Avatar src={j.photoURL} size="sm"/><Text >{j.fullname}</Text></HStack></a></Link>)
       ) : (
         <Center>
           <Spinner size="xl" />

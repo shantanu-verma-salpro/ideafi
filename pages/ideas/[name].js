@@ -156,14 +156,18 @@ function Idea() {
             </Button>
           ) : null}
   
-          <Text>Created By</Text>
+  <Text style={{background: "#1f1f1f",
+    padding: "5px 10px",
+    margin: "10px 0px",
+    borderRadius: "10px",
+    textAlign: "center"}}>Created By</Text>
 
           <Box>
             {createdBy && (
               <Link href={`/user/${createdBy.id}`}>
                 <a>
                   <HStack>
-                    <Avatar src={createdBy.photoURL} />
+                    <Avatar src={createdBy.photoURL} size="sm" />
                     <Text>{createdBy.fullname}</Text>
                   </HStack>
                 </a>
@@ -172,7 +176,11 @@ function Idea() {
           </Box>
         </VStack>
         <VStack alignItems="normal" mt="2">
-          <Text>Contributers</Text>
+          <Text style={{background: "#1f1f1f",
+    padding: "5px 10px",
+    margin: "10px 0px",
+    borderRadius: "10px",
+    textAlign: "center"}}>Contributers</Text>
 
           <Box>
             <ContribList contributions={data.contributions} />
