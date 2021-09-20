@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import {faUpload} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Router from 'next/router';
 const Loader = () => (
   <Center mt="20">
     <Spinner size="xl" />
@@ -47,6 +48,7 @@ function Setting() {
         photoURL: metadata.photoURL ? metadata.photoURL : "/pic.jpg",
         verified: false,
       });
+      Router.push(`/user/${AuthUser.id}`);
     } catch (e) {
       console.log(e);
     }
@@ -74,7 +76,7 @@ function Setting() {
       {metadata && (
         <>
           <Center mt="10">
-            <label>
+            <label style={{cursor:"pointer"}}>
             <input style={{display:"none"}}
               type="file"
               accept="image/*"
