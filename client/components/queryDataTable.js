@@ -6,6 +6,7 @@ import "firebase/firestore";
 import Link from 'next/link'
 import { Skeleton, Box,Container } from "@chakra-ui/react";
 
+
 createTheme("solarized", {
   text: {
     primary: "white",

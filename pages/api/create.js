@@ -11,8 +11,12 @@ export default function handler(req, res) {
     const body = req.body;
     const fi = {...body,verified:false,createdAt:created,ratings:0,contributions:[body.createdBy]};
     const idea = getFirebaseAdmin().firestore().collection("ideas");
-    idea.add(fi).then(()=>{
+    idea.add(fi).then((vg)=>{
+      getFirebaseAdmin().firestore().collection("ratings").doc(`${body.createdBy}_${vg.id}`).set({userId:body.createdBy,ideaId:vg.id,rating:0}).then(()=>{
         res.status(200).send({success:true});
+      }).catch(()=>{
+        res.status(500).send({success:false});
+      })
     }).catch(()=>{
         res.status(500).send({success:false});
     })
