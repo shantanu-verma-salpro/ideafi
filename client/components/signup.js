@@ -2,7 +2,7 @@ import useAuth from "../hooks/useAuth";
 import { useForm, Controller } from "react-hook-form";
 import { Container } from "@chakra-ui/react";
 import { FormLabel, Input, Button,useToast } from "@chakra-ui/react";
-
+import Router from 'next/router'
 export default function Auth() {
     const toast = useToast();
   const { signup } = useAuth();
@@ -18,6 +18,7 @@ export default function Auth() {
             duration: 2000,
             isClosable: true,
           })
+          Router.push("/");
     }catch(e){
         toast({
             title: "Some error occurred",

@@ -2,7 +2,7 @@ import useAuth from "../hooks/useAuth";
 import { useForm, Controller } from "react-hook-form";
 import { Container } from "@chakra-ui/react";
 import { FormLabel, Input, Button,useToast } from "@chakra-ui/react";
-
+import Router from 'next/router'
 export default function Auth() {
     const toast = useToast();
   const { signin } = useAuth();
@@ -10,6 +10,8 @@ export default function Auth() {
   const onSubmit = async (data) => {
     try{
         await signin(data.email,data.password);
+        Router.push('/');
+
     }catch(e){
         toast({
             title: "Login error",

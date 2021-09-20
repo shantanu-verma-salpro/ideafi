@@ -41,12 +41,21 @@ const customColumnSort = (rowA, rowB) => {
     }
     return 0;
   };
+  const titleSort = (rowA, rowB)=>{
+    if (rowA.title > rowB.title) {
+      return 1;
+     } else if (rowB.title > rowA.title) {
+      return -1;
+     }
+     return 0;
+  }
 export default function Explore({ query }) {
   const columns = [
     {
       name: "Title",
       selector: (row) => <Link href={`/ideas/${row.id}`}><a>{row.title}</a></Link>,
       sortable: true,
+      sortFunction:titleSort
     },
     {
       name: "Category",

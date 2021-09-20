@@ -13,6 +13,7 @@ import {
 import getCat from "../store/cat";
 import { withAuthUser, AuthAction,useAuthUser } from 'next-firebase-auth'
 import {useRouter} from 'next/router'
+import Router from 'next/router'
 const customStyles = {
   option: (provided, state) => ({
     ...provided,
@@ -45,7 +46,14 @@ function Idea() {
             isClosable: true,
           });
         }else{
-          router.push("/");
+          toast({
+            title: "Congratulations!",
+            description: "You just posted idea",
+            status: "success",
+            duration: 2000,
+            isClosable: true,
+          })
+          Router.push("/");
         }
       })
       .catch(error => {

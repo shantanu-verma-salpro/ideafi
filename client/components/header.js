@@ -53,28 +53,28 @@ function Header() {
                 variant="outline"
               />
               <MenuList color="blackAlpha.700" zIndex="999">
-                <MenuItem>
+                
                   <Link href="/create">
-                    <a><HStack spacing="2">
+                    <a><MenuItem><HStack spacing="2">
                       <FontAwesomeIcon
                         icon={faPlusCircle}
                         widths="27px"
                         xHeight="27px"
-                      /> <Text>Create idea</Text></HStack>
+                      /> <Text>Create idea</Text></HStack></MenuItem>
                     </a>
                   </Link>
-                </MenuItem>
-                <MenuItem>
+                
+               
                   <Link href={`/user/${AuthUser.id}`}>
-                    <a><HStack spacing="2">
+                    <a> <MenuItem><HStack spacing="2">
                       <FontAwesomeIcon
                         icon={faUserTie}
                         widths="27px"
                         xHeight="27px"
-                      /> <Text>Profile</Text></HStack>
+                      /> <Text>Profile</Text></HStack></MenuItem>
                     </a>
                   </Link>
-                </MenuItem>
+                
                 <MenuItem  onClick={async () => {
                       await signout();
                     }}><HStack spacing="2">
