@@ -184,8 +184,8 @@ function Idea() {
   const getContents = (left) => {
     if (isPc) {
       return (
-        <HStack justifyContent="space-between">
-          <Box w="80%" bg="#131313" p="2" borderRadius="10" minH="400px">
+        <HStack justifyContent="space-between" alignItems="stretch">
+          <Box w="80%" bg="#131313" p="4" borderRadius="10" minH="400px">
             {left}
           </Box>
           <Box w="20%" bg="#131313" p="2" borderRadius="10" minH="400px">
@@ -196,7 +196,7 @@ function Idea() {
     } else
       return (
         <VStack>
-          <Box bg="#131313" p="2" borderRadius="10" minH="400px">
+          <Box bg="#131313" p="4" borderRadius="10" minH="400px">
             {left}
           </Box>
           <Box bg="#131313" p="2" borderRadius="10" minH="400px">
