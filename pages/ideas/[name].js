@@ -120,8 +120,8 @@ function Idea() {
     return (
       <Box w="100%" bg="#131313" p="5" borderRadius="10" minH="100px">
         <VStack alignItems="normal">
-        <Box d="flex"  mb="4" alignItems="center">
-                <Text mr="2"> Ratings </Text>{Array(5)
+        <Box d="flex"  mb="4" alignItems="center" justifyContent="center">
+                {Array(5)
                   .fill("")
                   .map((_, i) => (
                     <StarIcon
@@ -135,7 +135,7 @@ function Idea() {
                     />
                   ))}
               </Box>
-        <Button colorScheme="purple" size="sm">
+        <Button colorScheme="purple" size="sm" mt="4">
                 <HStack spacing="1">
                   <FontAwesomeIcon icon={faEthereum} size="sm" />
                   <Text>
@@ -175,7 +175,7 @@ function Idea() {
             )}
           </Box>
         </VStack>
-        <VStack alignItems="normal" mt="2">
+        <VStack alignItems="normal" mt="4">
           <Text style={{background: "#1f1f1f",
     padding: "5px 10px",
     margin: "10px 0px",
