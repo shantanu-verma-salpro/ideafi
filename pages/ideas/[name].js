@@ -156,7 +156,7 @@ function Idea() {
             </Button>
           ) : null}
   
-  <Text style={{background: "#1f1f1f",
+          <Text style={{background: "#1f1f1f",
     padding: "5px 10px",
     margin: "10px 0px",
     borderRadius: "10px",
@@ -203,11 +203,11 @@ function Idea() {
       );
     } else
       return (
-        <VStack>
-          <Box bg="#131313" p="4" borderRadius="10" minH="400px">
+        <VStack alignItems="normal">
+          <Box bg="#131313" p="4" borderRadius="10"  w="100%">
             {left}
           </Box>
-          <Box bg="#131313" p="2" borderRadius="10" minH="400px">
+          <Box bg="#131313" p="2" borderRadius="10"  w="100%">
             {getSidebar()}
           </Box>
         </VStack>
